@@ -208,6 +208,29 @@ public class DAO {
 			
 			return null;
 		}
+		public Customer getCusByID(String id){
+			String query = "select * from customer\n" + "where cusID=?";
+			
+			try {
+				conn = new DBContext().getConnection();//mo ket noi mysql
+				ps=conn.prepareStatement(query);
+				ps.setString(1, id);
+				rs=ps.executeQuery();//rs = result grid
+				
+				while(rs.next()) {
+					return new Customer(rs.getInt(1),
+										rs.getString(2),
+										rs.getString(3),
+										rs.getString(4),
+										rs.getString(5));
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
+			
+			return null;
+		}
 		
 		public List<Product> getProductSearchByName(String txtSearch){
 			List<Product> listProduct = new ArrayList<Product>();
@@ -305,6 +328,43 @@ public class DAO {
 	            conn = new DBContext().getConnection();//mo ket noi voi sql
 	            ps = conn.prepareStatement(query);
 	            ps.setString(1, proID);
+	            ps.executeUpdate();
+	        } catch (Exception e) {
+	        }
+	    }
+		
+		
+		
+		
+		public void editCustomer( String cusCode, String cusName,String cusAddress, String cusPhone,
+				String cusID) {
+	        String query = "update customer \r\n"
+	        		+ "set cusCode = ?,\r\n"
+	        		+ " cusName = ?, \r\n"
+	        		+ " cusAddress = ?, \r\n"
+	        		+ " cusPhone = ?, \r\n"
+	        		
+	        		+ " where cusID = ?";
+	        try {
+	            conn = new DBContext().getConnection();//mo ket noi voi sql
+	            ps = conn.prepareStatement(query);
+	            ps.setString(1, cusCode);
+	            ps.setString(2, cusName);
+	            ps.setString(3, cusName);
+	            ps.setString(4, cusPhone);
+	            ps.setString(5, cusID);
+	           
+	            ps.executeUpdate();
+	        } catch (Exception e) {
+	        }
+	    }
+		public void deleteCustomer(String cusID) {
+	        String query = "delete from customer\n"
+	                + "where cusID = ?";
+	        try {
+	            conn = new DBContext().getConnection();//mo ket noi voi sql
+	            ps = conn.prepareStatement(query);
+	            ps.setString(1, cusID);
 	            ps.executeUpdate();
 	        } catch (Exception e) {
 	        }

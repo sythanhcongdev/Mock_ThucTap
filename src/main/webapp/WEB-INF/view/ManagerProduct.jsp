@@ -40,12 +40,15 @@ img {
 					<ul class="list-group category_block">
 						<a class="nav-link" href="managercus">Manager Custumer</a>
 					</ul>
+					<ul class="list-group category_block">
+				<a class="nav-link" href="home">Home</a>
+			</ul>
 				</div>
 			</div>
 		</div>
 
 		<div class="col-sm-9">
-			<div class="row">
+			<div class="row">F
 				<div class="table-wrapper">
 					<div class="table-title">
 						<div class="row">

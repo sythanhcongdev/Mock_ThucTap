@@ -43,7 +43,7 @@ img {
 		<div id="editEmployeeModal">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<form action="" method="post">
+					<form action="edit" method="post">
 						<div class="modal-header">
 							<h4 class="modal-title">Edit Product</h4>
 							<a href="manager"><button type="button" class="close" data-dismiss="modal"
@@ -51,11 +51,11 @@ img {
 						</div>
 						<div class="modal-body">
 							<div class="form-group">
-								<label>ID</label> <input name="proId" type="text"  value="${detail.proId}"
+								<label>ID</label> <input name="proID" type="text"  value="${detail.proId}"
 									class="form-control" readonly required>
 							</div>
 							<div class="form-group">
-								<label>Name</label> <input  value="${detail.proName}" name="proName" type="text"
+								<label>Name</label> <input  value="${detail.proName}" name="ProName" type="text"
 									class="form-control" required>
 							</div>
 							<div class="form-group">
@@ -94,7 +94,7 @@ img {
 			</div>
 		</div>
 
-
+<%-- 
 <div id="addCartModule">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -175,7 +175,7 @@ img {
 		</div>
 		
 	</div>
-
+ --%>
 
 	<script src="js/manager.js" type="text/javascript"></script>
 </body>

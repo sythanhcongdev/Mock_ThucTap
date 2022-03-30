@@ -40,6 +40,9 @@ img {
 					<ul class="list-group category_block">
 						<a class="nav-link" href="managercus">Manager Custumer</a>
 					</ul>
+					<ul class="list-group category_block">
+						<a class="nav-link" href="home">Home</a>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -58,7 +61,7 @@ img {
 								<a href="#addCusModule" class="btn btn-success"
 									data-toggle="modal"><i class="material-icons">&#xE147;</i>
 									<span>Add New Customer</span></a>
-									 
+
 							</div>
 						</div>
 					</div>
@@ -78,15 +81,17 @@ img {
 							<c:forEach items="${listCus}" var="o">
 								<tr>
 
-									<td>${o.cusId}</td>
+									<td>${o.cusID}</td>
 									<td>${o.cusCode}</td>
 									<td>${o.cusName}</td>
 									<td>${o.cusAddress}</td>
 									<td>${o.cusPhone}</td>
-									<td>
-<%-- 										<a href="loadproduct?proId=${o.proId}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
- --%>										<a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-											</td>
+									<td><a href="loadcustomer?cusID=${o.cusID}" class="edit"
+										data-toggle="modal"><i class="material-icons"
+											data-toggle="tooltip" title="Edit">&#xE254;</i></a> <a
+										href="deleteCus?cusID=${o.cusID}" class="delete"
+										data-toggle="modal"><i class="material-icons"
+											data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
 								</tr>
 							</c:forEach>
 
@@ -96,12 +101,12 @@ img {
 
 
 				</div>
-				
+
 			</div>
 		</div>
 	</div>
 	<!-- Edit Modal HTML -->
-	
+
 
 	<!-- Add Order Modal HTML -->
 	<div id="addCusModule" class="modal fade">
@@ -131,15 +136,15 @@ img {
 							<label>Phone</label> <input name="cusPhone" type="text"
 								class="form-control" required>
 						</div>
-						
+
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal"
 							value="Cancel"> <input type="submit"
 							class="btn btn-success" value="Add">
 					</div>
-					
-					
+
+
 				</form>
 			</div>
 		</div>

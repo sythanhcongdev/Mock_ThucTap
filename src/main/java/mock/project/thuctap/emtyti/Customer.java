@@ -9,7 +9,7 @@
 package mock.project.thuctap.emtyti;
 
 public class Customer {
-	private int cusId;
+	private int cusID;
 	private String cusCode;
 	private String cusName;
 	private String cusAddress;
@@ -21,13 +21,13 @@ public class Customer {
 	}
 
 
-	public int getCusId() {
-		return cusId;
+	public int getCusID() {
+		return cusID;
 	}
 
 
-	public void setCusId(int cusId) {
-		this.cusId = cusId;
+	public void setCusID(int cusID) {
+		this.cusID = cusID;
 	}
 
 
@@ -71,9 +71,9 @@ public class Customer {
 	}
 
 
-	public Customer(int cusId, String cusCode, String cusName, String cusAddress, String cusPhone) {
+	public Customer(int cusID, String cusCode, String cusName, String cusAddress, String cusPhone) {
 		super();
-		this.cusId = cusId;
+		this.cusID = cusID;
 		this.cusCode = cusCode;
 		this.cusName = cusName;
 		this.cusAddress = cusAddress;
@@ -83,7 +83,7 @@ public class Customer {
 
 	@Override
 	public String toString() {
-		return "Customer [cusId=" + cusId + ", cusCode=" + cusCode + ", cusName=" + cusName + ", cusAddress="
+		return "Customer [cusID=" + cusID + ", cusCode=" + cusCode + ", cusName=" + cusName + ", cusAddress="
 				+ cusAddress + ", cusPhone=" + cusPhone + "]";
 	}
 	
